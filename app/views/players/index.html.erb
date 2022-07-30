@@ -1,0 +1,30 @@
+<h2 style="color: red"><%= notice %></h2>
+
+<h1>List of Players</h1>
+
+<div id="players">
+<table class="table">
+<thead>
+<tr>
+	<th scope="col"><%= link_to "Player Name", :sort => "player_name" %></th>
+	<th scope="col"><%= link_to "Position", :sort => "position" %></th>
+	<th scope="col"><%= link_to "Avg. Ranking", :sort => "avg_ranking" %></th>
+	<th scope="col">Details</th>
+	<%= link_to "Create new player", new_player_path, class:"btn btn-sm btn-success mt-2 mb-2" %>
+</tr>
+</thead>
+  <% @players.each do |player| %>
+<tbody>
+<tr>
+	<td scope="row"><%= player.player_name %></td>
+	<td><%= player.position %></td>
+	<td><%= player.avg_ranking %></td>
+	<td><%= link_to "Show this player", player, class:"btn btn-sm btn-info" %></td>
+</tr>
+</tbody>
+  <% end %>
+</table>
+<br>
+
+</div>
+

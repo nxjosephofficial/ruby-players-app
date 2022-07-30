@@ -1,0 +1,33 @@
+<%= form_with(model: player) do |form| %>
+  <% if player.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(player.errors.count, "error") %> prohibited this player from being saved:</h2>
+
+      <ul>
+        <% player.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :player_name, style: "display: block" %>
+    <%= form.text_field :player_name, class:"input-group-text" %>
+  </div>
+
+  <div>
+    <%= form.label :position, style: "display: block" %>
+    <%= form.text_field :position, class:"input-group-text" %>
+  </div>
+
+  <div>
+    <%= form.label :avg_ranking, style: "display: block" %>
+    <%= form.text_field :avg_ranking, class:"input-group-text" %>
+  <br>
+  </div>
+
+  <div>
+    <%= form.submit :'Update/Create Player', class:"btn btn-sm btn-success" %>
+  </div>
+<% end %>

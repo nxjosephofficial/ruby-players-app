@@ -1,0 +1,11 @@
+<h2 style="color:green"><%= notice %></h2>
+
+<%= render @player %>
+
+<div>
+  <br>
+  <%= link_to "Edit this player", edit_player_path(@player), class:"btn btn-sm btn-secondary" %> |
+  <%= link_to "Back to players", players_path, class:"btn btn-sm btn-dark" %>
+  <br><br>
+  <%= button_to "Destroy this player", @player, method: :delete, class:"btn btn-sm btn-danger" %>
+</div>
