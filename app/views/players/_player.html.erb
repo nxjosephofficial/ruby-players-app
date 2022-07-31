@@ -1,7 +1,13 @@
 <div id="<%= dom_id player %>">
-
-<h1><strong>Player name:</strong> <%= player.player_name %></h1>
+<div class="card" style="width: 20rem;">
+  <div class="card-body">
+    <h5 class="card-title"><strong>Player Name</strong><br><em><%= player.player_name %></em></h5>
+    <p class="card-text"><strong>Position</strong><br><%= player.position %></p>
+    <p class="card-text"><strong>Avg ranking</strong><br><%= player.avg_ranking %></p>
+  </div>
+</div>
+<!--<h1><strong>Player name:</strong> <%= player.player_name %></h1>
 <h2><strong>Position:</strong> <%= player.position %></h2>
 <h3><strong>Avg ranking:</strong> <%= player.avg_ranking %></h3>
-
+-->
 </div>

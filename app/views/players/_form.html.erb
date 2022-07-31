@@ -1,6 +1,7 @@
 <%= form_with(model: player) do |form| %>
   <% if player.errors.any? %>
-    <div style="color: red">
+<!--    <div style="color: red">-->
+        <div class="alert alert-danger" role="alert">
       <h2><%= pluralize(player.errors.count, "error") %> prohibited this player from being saved:</h2>
 
       <ul>
@@ -11,23 +12,27 @@
     </div>
   <% end %>
 
-  <div>
+  <div class="mb-3">
     <%= form.label :player_name, style: "display: block" %>
     <%= form.text_field :player_name, class:"input-group-text" %>
   </div>
 
-  <div>
+  <div class="mb-3">
     <%= form.label :position, style: "display: block" %>
     <%= form.text_field :position, class:"input-group-text" %>
   </div>
 
-  <div>
+  <div class="mb-3">
     <%= form.label :avg_ranking, style: "display: block" %>
     <%= form.text_field :avg_ranking, class:"input-group-text" %>
   <br>
   </div>
 
   <div>
-    <%= form.submit :'Update/Create Player', class:"btn btn-sm btn-success" %>
+    <% if current_page?(new_player_path) %>
+    <%= form.submit :'Create Player', class:"btn btn-sm btn-success" %>
+    <% else %>
+    <%= form.submit :'Update Player', class:"btn btn-sm btn-success" %>
+    <% end %>
   </div>
 <% end %>

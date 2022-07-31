@@ -1,4 +1,9 @@
-<h2 style="color:green"><%= notice %></h2>
+<% unless notice.nil? %>
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  <%= notice %>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+<% end %>
 
 <%= render @player %>
 
